@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App - Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>My To-Do List</h1>
+                <p class="subtitle">Stay organized and productive</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn" aria-label="Add task">
+                        <span class="btn-icon">+</span>
+                        <span class="btn-text">Add Task</span>
+                    </button>
+                </div>
+                <div class="input-hint">Press Enter or click Add Task to create a new item</div>
+            </section>
+
+            <!-- Filter Buttons -->
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </section>
+
+            <!-- Stats -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">Total Tasks:</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value" id="completedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Remaining:</span>
+                    <span class="stat-value" id="remainingCount">0</span>
+                </div>
+            </section>
+
+            <!-- To-Do List -->
+            <section class="todo-section">
+                <ul id="todoList" class="todo-list">
+                    <!-- To-do items will be added here by JavaScript -->
+                </ul>
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section">
+                <button id="clearCompletedBtn" class="action-btn danger-btn" disabled>
+                    Clear Completed
+                </button>
+                <button id="clearAllBtn" class="action-btn warning-btn" disabled>
+                    Clear All
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>To-Do List App • Built with HTML, CSS & JavaScript</p>
+            <p>Your tasks are saved automatically to your browser</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
